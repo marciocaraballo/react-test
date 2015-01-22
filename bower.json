@@ -1,0 +1,23 @@
+{
+  "name": "react-test",
+  "version": "0.0.1",
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Marcio Caraballo"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies" : {
+    "bootstrap" : "~3.3.2",
+    "react" : "https://github.com/facebook/react.git#~0.12.2"
+  }
+}

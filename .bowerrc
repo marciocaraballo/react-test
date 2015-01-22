@@ -1,0 +1,5 @@
+{
+  "directory": "public/vendor/",
+  "proxy":"http://proxy.corp.globant.com:3128",
+  "https-proxy":"http://proxy.corp.globant.com:3128"
+}
