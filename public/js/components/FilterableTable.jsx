@@ -1,7 +1,7 @@
 /** @jsx React.DOM **/
 
-var FilterBar = require('FilterBar.jsx'),
-	FilesTable = require('FilesTable.jsx');
+var FilterBar = require('./FilterBar.jsx'),
+	FilesTable = require('./FilesTable.jsx');
 
 var FilterableTable = React.createClass({
 	propTypes : {

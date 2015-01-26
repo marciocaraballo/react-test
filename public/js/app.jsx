@@ -1,37 +1,51 @@
 /** @jsx React.DOM **/
 
 var React = require('react'),
-	FilterableTable = require('components/FilterableTable.jsx');
+	FilterableTable = require('./components/FilterableTable.jsx'),
+	DropZone = require('./components/DropZone.jsx');
 
-/** Mock data*/
-var files = [{
-	name : 'Fileclank',
-	size: '100kb',
-	type: 'php'
-},{
-	name : 'Filecluc',
-	size: '120kb',
-	type: 'php'
-},{
-	name : 'Bojo',
-	size: '10kb',
-	type: 'php'
-},{
-	name : 'Riber',
-	size: '100000kb',
-	type: 'txt'
-},{
-	name : 'Rasin',
-	size: '1067kb',
-	type: 'txt'
-},{
-	name : 'Filecluc',
-	size: '0kb',
-	type: 'png'
-},{
-	name : 'Filecluc',
-	size: '12kb',
-	type: 'js'
-}];
+var App = React.createClass({
 
-React.renderComponent(<FilterableTable files={files} />, document.getElementById('filterableTable'));
+	getInitialState : function () {
+
+		return {
+			files : []
+		};
+	},
+
+	handleNewFile : function (file) {
+
+		var newFiles = this.state.files.concat(file);
+
+		this.setState({
+			files : newFiles
+		});
+	},
+
+	handleFileDelete : function (fileName) {
+
+		var files = this.state.files.slice(0),
+			newFiles = files.filter(function (file){
+				return file.name !== fileName;
+			});
+
+		this.setState({
+			files : newFiles
+		});
+
+	},
+
+	render : function () { 
+
+		return (
+
+			<section>
+				<DropZone onNewFile={this.handleNewFile} />
+				<FilterableTable files={this.state.files} onDeleteFile={this.handleFileDelete} />
+			</section>
+
+		);
+	}
+});
+
+React.renderComponent(<App />, document.getElementById('app'));

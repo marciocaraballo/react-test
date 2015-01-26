@@ -1,6 +1,6 @@
 /** @jsx React.DOM **/
 
-var FileRow = require('FileRow.jsx');
+var FileRow = require('./FileRow.jsx');
 
 var FilesTable = React.createClass({
 	render : function () {
