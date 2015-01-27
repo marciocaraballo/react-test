@@ -4,6 +4,8 @@ var React = require('react'),
 	FilterableTable = require('./components/FilterableTable.jsx'),
 	DropZone = require('./components/DropZone.jsx');
 
+console.log(DropZone);
+
 var App = React.createClass({
 
 	getInitialState : function () {

@@ -1,7 +1,8 @@
 /** @jsx React.DOM **/
 
 var FilterBar = require('./FilterBar.jsx'),
-	FilesTable = require('./FilesTable.jsx');
+	FilesTable = require('./FilesTable.jsx'),
+	React = require('react');
 
 var FilterableTable = React.createClass({
 	propTypes : {
@@ -19,7 +20,7 @@ var FilterableTable = React.createClass({
 	},
 	render : function () {
 		return (
-			<section class="file-list">
+			<section className="file-list">
 				<FilterBar onFilterInput={this.handleFilterInput} filterText={this.state.filterText} />
 				<FilesTable filterText={this.state.filterText} files={this.props.files} />
 			</section>

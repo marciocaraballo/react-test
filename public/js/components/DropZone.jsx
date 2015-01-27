@@ -1,3 +1,7 @@
+/** @jsx React.DOM **/
+
+var React = require('react');
+
 var DropZone = React.createClass({
 
 	handleDrop : function (e){

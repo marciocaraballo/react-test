@@ -1,5 +1,7 @@
 /** @jsx React.DOM **/
 
+var React = require('react');
+
 var FileRow = React.createClass({
 	render : function () {
 		return (

@@ -18292,6 +18292,8 @@ var React = require('react'),
 	FilterableTable = require('./components/FilterableTable.jsx'),
 	DropZone = require('./components/DropZone.jsx');
 
+console.log(DropZone);
+
 var App = React.createClass({displayName: "App",
 
 	getInitialState : function () {
@@ -18338,6 +18340,10 @@ var App = React.createClass({displayName: "App",
 
 React.renderComponent(React.createElement(App, null), document.getElementById('app'));
 },{"./components/DropZone.jsx":149,"./components/FilterableTable.jsx":153,"react":147}],149:[function(require,module,exports){
+/** @jsx React.DOM **/
+
+var React = require('react');
+
 var DropZone = React.createClass({displayName: "DropZone",
 
 	handleDrop : function (e){
@@ -18389,8 +18395,10 @@ var DropZone = React.createClass({displayName: "DropZone",
 });
 
 module.exports = DropZone;
-},{}],150:[function(require,module,exports){
+},{"react":147}],150:[function(require,module,exports){
 /** @jsx React.DOM **/
+
+var React = require('react');
 
 var FileRow = React.createClass({displayName: "FileRow",
 	render : function () {
@@ -18405,10 +18413,11 @@ var FileRow = React.createClass({displayName: "FileRow",
 });
 
 module.exports = FileRow;
-},{}],151:[function(require,module,exports){
+},{"react":147}],151:[function(require,module,exports){
 /** @jsx React.DOM **/
 
-var FileRow = require('./FileRow.jsx');
+var FileRow = require('./FileRow.jsx'),
+	React = require('react');
 
 var FilesTable = React.createClass({displayName: "FilesTable",
 	render : function () {
@@ -18443,8 +18452,10 @@ var FilesTable = React.createClass({displayName: "FilesTable",
 });
 
 module.exports = FilesTable;
-},{"./FileRow.jsx":150}],152:[function(require,module,exports){
+},{"./FileRow.jsx":150,"react":147}],152:[function(require,module,exports){
 /** @jsx React.DOM **/
+
+var React = require('react');
 
 var FilterBar = React.createClass({displayName: "FilterBar",
 	handleTextChange: function () {
@@ -18462,12 +18473,13 @@ var FilterBar = React.createClass({displayName: "FilterBar",
 	}
 });
 
-module.expots = FilterBar;
-},{}],153:[function(require,module,exports){
+module.exports = FilterBar;
+},{"react":147}],153:[function(require,module,exports){
 /** @jsx React.DOM **/
 
 var FilterBar = require('./FilterBar.jsx'),
-	FilesTable = require('./FilesTable.jsx');
+	FilesTable = require('./FilesTable.jsx'),
+	React = require('react');
 
 var FilterableTable = React.createClass({displayName: "FilterableTable",
 	propTypes : {
@@ -18485,7 +18497,7 @@ var FilterableTable = React.createClass({displayName: "FilterableTable",
 	},
 	render : function () {
 		return (
-			React.createElement("section", {class: "file-list"}, 
+			React.createElement("section", {className: "file-list"}, 
 				React.createElement(FilterBar, {onFilterInput: this.handleFilterInput, filterText: this.state.filterText}), 
 				React.createElement(FilesTable, {filterText: this.state.filterText, files: this.props.files})
 			)
@@ -18494,4 +18506,4 @@ var FilterableTable = React.createClass({displayName: "FilterableTable",
 });
 
 module.exports = FilterableTable;
-},{"./FilesTable.jsx":151,"./FilterBar.jsx":152}]},{},[148,149,150,151,152,153]);
+},{"./FilesTable.jsx":151,"./FilterBar.jsx":152,"react":147}]},{},[148,149,150,151,152,153]);

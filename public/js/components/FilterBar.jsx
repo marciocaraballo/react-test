@@ -1,5 +1,7 @@
 /** @jsx React.DOM **/
 
+var React = require('react');
+
 var FilterBar = React.createClass({
 	handleTextChange: function () {
 		this.props.onFilterInput(this.refs.filterTextInput.getDOMNode().value);
@@ -16,4 +18,4 @@ var FilterBar = React.createClass({
 	}
 });
 
-module.expots = FilterBar;
+module.exports = FilterBar;
