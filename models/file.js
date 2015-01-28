@@ -1,6 +1,7 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+	Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://marciocaraballo:yosoydelverde1@ds051970.mongolab.com:51970/fileupload');
+mongoose.connect('mongodb://mqdadmin:MDQadmin2014@ds059887.mongolab.com:59887/proyectomqd');
 
 var FileSchema = new Schema({
 	path : {
@@ -14,11 +15,5 @@ var FileSchema = new Schema({
 		type : String
 	}
 });
-
-FileSchema.statics.load = function (id, cb) {
-	this.findOne({
-		_id : id
-	}).exec(cb);
-};
 
 var FileModel = mongoose.model('File', FileSchema);

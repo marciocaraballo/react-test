@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
 	File = mongoose.model('File');
 
-exports.create = function () {
+exports.create = function (req, res) {
 
 };
 
