@@ -6,7 +6,8 @@ var FilterBar = require('./FilterBar.jsx'),
 
 var FilterableTable = React.createClass({
 	propTypes : {
-		files : React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+		files : React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+		onDeleteFile : React.PropTypes.func
 	},
 	getInitialState: function () {
 		return {

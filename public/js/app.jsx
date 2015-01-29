@@ -2,11 +2,8 @@
 
 var React = require('react'),
 	FilterableTable = require('./components/FilterableTable.jsx'),
-	DropZone = require('./components/DropZone.jsx');
-
-var assign = require('object-assign');
-
-console.log(assign);
+	DropZone = require('./components/DropZone.jsx'),
+	assign = require('object-assign');
 
 var App = React.createClass({
 

@@ -4,6 +4,14 @@ var FileRow = require('./FileRow.jsx'),
 	React = require('react');
 
 var FilesTable = React.createClass({
+
+	propTypes : {
+
+		filterText : React.PropTypes.string,
+		files : React.PropTypes.arrayOf(React.PropTypes.object)
+
+	},
+
 	render : function () {
 
 		var props = this.props;

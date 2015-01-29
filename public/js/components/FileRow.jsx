@@ -3,6 +3,11 @@
 var React = require('react');
 
 var FileRow = React.createClass({
+
+	propTypes : {
+		file : React.PropTypes.object.isRequired
+	},
+
 	render : function () {
 		return (
 			<tr>

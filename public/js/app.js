@@ -18318,11 +18318,8 @@ module.exports = require('./lib/React');
 
 var React = require('react'),
 	FilterableTable = require('./components/FilterableTable.jsx'),
-	DropZone = require('./components/DropZone.jsx');
-
-var assign = require('object-assign');
-
-console.log(assign);
+	DropZone = require('./components/DropZone.jsx'),
+	assign = require('object-assign');
 
 var App = React.createClass({displayName: "App",
 
@@ -18375,6 +18372,12 @@ React.renderComponent(React.createElement(App, null), document.getElementById('a
 var React = require('react');
 
 var DropZone = React.createClass({displayName: "DropZone",
+
+	propTypes : {
+
+		onNewFile : React.PropTypes.func.isRequired
+
+	},
 
 	handleDrop : function (e){
 
@@ -18431,6 +18434,11 @@ module.exports = DropZone;
 var React = require('react');
 
 var FileRow = React.createClass({displayName: "FileRow",
+
+	propTypes : {
+		file : React.PropTypes.object.isRequired
+	},
+
 	render : function () {
 		return (
 			React.createElement("tr", null, 
@@ -18450,6 +18458,14 @@ var FileRow = require('./FileRow.jsx'),
 	React = require('react');
 
 var FilesTable = React.createClass({displayName: "FilesTable",
+
+	propTypes : {
+
+		filterText : React.PropTypes.string,
+		files : React.PropTypes.arrayOf(React.PropTypes.object)
+
+	},
+
 	render : function () {
 
 		var props = this.props;
@@ -18488,6 +18504,14 @@ module.exports = FilesTable;
 var React = require('react');
 
 var FilterBar = React.createClass({displayName: "FilterBar",
+
+	propTypes : {
+
+		onFilterInput : React.PropTypes.func.isRequired,
+		filterText : React.PropTypes.string
+
+	},
+
 	handleTextChange: function () {
 		this.props.onFilterInput(this.refs.filterTextInput.getDOMNode().value);
 	},
@@ -18513,7 +18537,8 @@ var FilterBar = require('./FilterBar.jsx'),
 
 var FilterableTable = React.createClass({displayName: "FilterableTable",
 	propTypes : {
-		files : React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+		files : React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+		onDeleteFile : React.PropTypes.func
 	},
 	getInitialState: function () {
 		return {

@@ -4,6 +4,12 @@ var React = require('react');
 
 var DropZone = React.createClass({
 
+	propTypes : {
+
+		onNewFile : React.PropTypes.func.isRequired
+
+	},
+
 	handleDrop : function (e){
 
 		e.preventDefault();

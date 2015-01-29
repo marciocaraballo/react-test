@@ -3,6 +3,14 @@
 var React = require('react');
 
 var FilterBar = React.createClass({
+
+	propTypes : {
+
+		onFilterInput : React.PropTypes.func.isRequired,
+		filterText : React.PropTypes.string
+
+	},
+
 	handleTextChange: function () {
 		this.props.onFilterInput(this.refs.filterTextInput.getDOMNode().value);
 	},
