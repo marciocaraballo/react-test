@@ -3,6 +3,7 @@
 var React = require('react'),
 	FilterableTable = require('./components/FilterableTable.jsx'),
 	DropZone = require('./components/DropZone.jsx'),
+	FileStore = require('./stores/FileStore')
 	assign = require('object-assign');
 
 var App = React.createClass({
@@ -10,7 +11,7 @@ var App = React.createClass({
 	getInitialState : function () {
 
 		return {
-			files : []
+			allFiles : FileStore.getAll();
 		};
 	},
 
